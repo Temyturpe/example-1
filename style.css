@@ -1,0 +1,88 @@
+/* @tailwind base;
+@tailwind utility;
+@tailwind component;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, .boxes{
+    width: 100%;
+}
+.boxes{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 10px auto ;
+    max-width: 1200px;
+}
+.box{
+    width: 250px;
+    height: 300px;
+    font-size: 36px;
+    font-weight: 800;
+    border: 2px solid;
+}
+
+@media screen and (max-width: 1200px) {
+    .boxes{
+        padding: 20px;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+}
+@media screen and (max-width: 886px) {
+    .box{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 559px) {
+    .boxes{
+        justify-content: center;
+    }
+}
+.button{
+    background-color: blueviolet;
+    width: 200px;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+.grandchild1{
+    color: red;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.btn{
+    padding: 18px 24px;
+    font-size: 20px;
+    border-radius: 18px;
+    background-color: #fff;
+    color: #000;
+}
+.btnstyle{
+    padding: 18px 24px;
+    font-size: 20px;
+    border-radius: 18px;
+    background-color: black;
+    color: #fff;
+    border: none;
+}
+.popup{
+    border: 2px solid #000;
+    text-align: center;
+    width: 600px;
+    height: 300px;
+    font-size: 20px;
+}
+.hide-popup, .state{
+    display: none;
+}
