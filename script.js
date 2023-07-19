@@ -445,6 +445,8 @@ for (let i = 0; i < buttons.length; i++){
 
 close.addEventListener('click', closePopup);
 
+
+
 // button.addEventListener('click', function () {
 //     button.classList.add('btnstyle');
 // })
