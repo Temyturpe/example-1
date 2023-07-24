@@ -344,19 +344,16 @@
 //     sex: 'male',
 //     colleagues: ['doyin', 'blessing', 'finbarr'],
 //     bestFood: 'rice',
-    // currentAge: function(birthYear){
-    //     return 2023 - birthYear;
-    // },
-    // currentAge: function(){
-    //     return 2023 - this.birthYear;
-    // }
+//     currentAge: function(birthYear){
+//         return 2023 - birthYear;
+//     },
+//     currentAge: function(){
+//         return 2023 - this.birthYear;
+//     },
 //    currentAgeFuct: function(){
 //     this.age = 2023 - this.birthYear;
 //     return this.age;
-//    }
-
-    
-
+//    } 
 // };
 // console.log(doyin.age);
 // console.log(doyin.currentAgeFuct(birthYear));
@@ -425,25 +422,25 @@
 // console.log(grandkids.innerText);
 
 //element styling
-const buttons = document.querySelectorAll('.btn');
-const btnStyle = document.getElementsByTagName('button');
-const popup = document.querySelector('.popup');
-const close = document.querySelector('.close');
+// const buttons = document.querySelectorAll('.btn');
+// const btnStyle = document.getElementsByTagName('button');
+// const popup = document.querySelector('.popup');
+// const close = document.querySelector('.close');
 
-const openPopup = function(){
-    popup.classList.remove('hide-popup');
+// const openPopup = function(){
+//     popup.classList.remove('hide-popup');
     
     
-}
-const closePopup = function(){
-    popup.classList.add('hide-popup');
-}
+// }
+// const closePopup = function(){
+//     popup.classList.add('hide-popup');
+// }
 
-for (let i = 0; i < buttons.length; i++){
-   buttons[i].addEventListener('click', openPopup);
-}
+// for (let i = 0; i < buttons.length; i++){
+//    buttons[i].addEventListener('click', openPopup);
+// }
 
-close.addEventListener('click', closePopup);
+// close.addEventListener('click', closePopup);
 
 
 
@@ -463,6 +460,63 @@ close.addEventListener('click', closePopup);
 // }else{
 //     button.innerText = 'Click me';
 // };
+
+// ///////data destruscture
+
+// //destructuring arrays
+
+const chikaKitchen = {
+    kName: "chika's kitchen",
+    location: 'lagos',
+    foodCategory: ['local dishes', 'continental dishes', 'pasteries'],
+    drinks: ['water', 'gin', 'fruit juice'],
+    menu: ['peppersoup', 'peppered chicken', 'okra', 'egusi', 'fried rice'], 
+
+    order: function(drinkIndex, menuIndex){
+        return [this.drinks[drinkIndex], this.menu[menuIndex]];
+    }
+};
+
+const lovelynData = ['lovelyn', 'female', 20];
+
+//regular array check
+console.log(lovelynData);
+
+console.log(lovelynData[0]);
+console.log(lovelynData[1]);
+console.log(lovelynData[2]);
+
+//array destructuring
+//example 1
+const [userName, userGender, userAge] = lovelynData;
+console.log(userName, userGender, userAge);
+
+//example2
+let [firstcategory, secondcategory] = chikaKitchen.foodCategory;
+console.log(firstcategory, secondcategory);
+[firstcategory, secondcategory] = [secondcategory, firstcategory];
+console.log(firstcategory, secondcategory);
+
+//example 3
+console.log(chikaKitchen.order(2, 4));
+
+const [orderedDrink, orderedFood] = chikaKitchen.order(2, 4);
+console.log(orderedDrink, orderedFood);
+
+///destructin a nested array
+const nestedInfo = [12, 4, [3, 10, 9]];
+const [a, ,[b, c, d]] = nestedInfo;
+console.log(a, b, c, d);
+
+//regular variables
+const username = 'lovelyn';
+const usergender = 'female';
+const userage = 20;
+console.log(username, usergender, userage);
+
+//object destructing
+
+
 
 
 
