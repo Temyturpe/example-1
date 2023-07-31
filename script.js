@@ -465,56 +465,204 @@
 
 // //destructuring arrays
 
-const chikaKitchen = {
-    kName: "chika's kitchen",
-    location: 'lagos',
-    foodCategory: ['local dishes', 'continental dishes', 'pasteries'],
-    drinks: ['water', 'gin', 'fruit juice'],
-    menu: ['peppersoup', 'peppered chicken', 'okra', 'egusi', 'fried rice'], 
+// const chikaKitchen = {
+//     kName: "chika's kitchen",
+//     location: 'lagos',
+//     foodCategory: ['local dishes', 'continental dishes', 'pasteries'],
+//     drinks: ['water', 'gin', 'fruit juice'],
+//     menu: ['peppersoup', 'peppered chicken', 'okra', 'egusi', 'fried rice'], 
 
-    order: function(drinkIndex, menuIndex){
-        return [this.drinks[drinkIndex], this.menu[menuIndex]];
-    }
-};
+//     order: function(drinkIndex, menuIndex){
+//         return [this.drinks[drinkIndex], this.menu[menuIndex]];
+//     }
+// };
 
-const lovelynData = ['lovelyn', 'female', 20];
+// const secondBranch = new Map();
+// secondBranch.set('secondName', 'chikaExtra');
+// secondBranch.set(1, 'abeotuta');
+// secondBranch.set(2, 'agbara');
+// secondBranch.set('drinks', ['water', 'gin', 'fruit juice']);
+// secondBranch.set('open', 17);
+// secondBranch.set('close', 20)
+// secondBranch.set(true, 'we are open');
+// secondBranch.set(false, 'we are closed');
+// console.log(secondBranch);
+// secondBranch.delete('secondName');
+// console.log(secondBranch);
+// console.log(secondBranch.has('drinks'));
+// console.log(secondBranch.size);
+
+// console.log(secondBranch.get(2));
+// let date = new Date();
+// console.log(date);
+// const time = 17;
+// console.log(secondBranch.get(time > secondBranch.get('open') && time < secondBranch.get('close')));
+
+
+
+// const secondBranch2 = {
+//    secondName: 'chikaExtra',
+//    1: 'abeotuta',
+//    2: 'agbara'
+// }
+
+// sets
+// const staffs = new Set(['waiter', 'chef', 'gateman', 'chef', 'bouncer', 'waiter']);
+// console.log(staffs);
+
+// console.log(staffs.size);
+// console.log(staffs.add('live band'));
+// console.log(staffs.add('bouncer'));
+// staffs.delete('gateman')
+// console.log(staffs);
+
+
+
+// const lovelynData = ['lovelyn', 'female', 20];
 
 //regular array check
-console.log(lovelynData);
+// console.log(lovelynData);
 
-console.log(lovelynData[0]);
-console.log(lovelynData[1]);
-console.log(lovelynData[2]);
+// console.log(lovelynData[0]);
+// console.log(lovelynData[1]);
+// console.log(lovelynData[2]);
 
 //array destructuring
 //example 1
-const [userName, userGender, userAge] = lovelynData;
-console.log(userName, userGender, userAge);
+// const [userName, userGender, userAge] = lovelynData;
+// console.log(userName, userGender, userAge);
 
 //example2
-let [firstcategory, secondcategory] = chikaKitchen.foodCategory;
-console.log(firstcategory, secondcategory);
-[firstcategory, secondcategory] = [secondcategory, firstcategory];
-console.log(firstcategory, secondcategory);
+// let [firstcategory, secondcategory] = chikaKitchen.foodCategory;
+// console.log(firstcategory, secondcategory);
+// [firstcategory, secondcategory] = [secondcategory, firstcategory];
+// console.log(firstcategory, secondcategory);
 
 //example 3
-console.log(chikaKitchen.order(2, 4));
+// console.log(chikaKitchen.order(2, 4));
 
-const [orderedDrink, orderedFood] = chikaKitchen.order(2, 4);
-console.log(orderedDrink, orderedFood);
+// const [orderedDrink, orderedFood] = chikaKitchen.order(2, 4);
+// console.log(orderedDrink, orderedFood);
 
-///destructin a nested array
-const nestedInfo = [12, 4, [3, 10, 9]];
-const [a, ,[b, c, d]] = nestedInfo;
-console.log(a, b, c, d);
+///destructuring a nested array
+// const nestedInfo = [12, 4, [3, 10, 9]];
+// const [a, ,[b, c, d]] = nestedInfo;
+// console.log(a, b, c, d);
 
 //regular variables
-const username = 'lovelyn';
-const usergender = 'female';
-const userage = 20;
-console.log(username, usergender, userage);
+// const username = 'lovelyn';
+// const usergender = 'female';
+// const userage = 20;
+// console.log(username, usergender, userage);
 
-//object destructing
+//object destructing and spread operator
+
+
+//////asynchronous js
+
+
+console.log('hello');
+console.log('my');
+setTimeout(() => {
+    console.log('name');
+}, 2000);
+console.log('is');
+
+
+//callback(err, datares) //promise(resolved, rejected)
+
+///callback and callback-hell
+// const getPosts = (dataAddress, callback) => {
+//    const requests = new XMLHttpRequest;
+
+//    requests.addEventListener('readystatechange', () => {
+//     if(requests.readyState === 4 && requests.status === 200){ //if successfull (error becomes false)
+//         const data = JSON.parse(requests.responseText);
+//         callback(undefined, data);
+//     } else if(requests.readyState === 4){
+//         callback('cant get any post now', undefined);  ///if failed (error becomes true)
+//     }
+// } )
+
+// requests.open('GET', dataAddress);
+// requests.send();
+// }
+ 
+
+// getPosts('https://jsonplaceholder.typicode.com/posts/', (err, success) => {
+//    console.log(success);
+//     getPosts('https://jsonplaceholder.typicode.com/posts/', (err, success) => {
+//         console.log(success);
+//    });
+// });
+
+// promises and promise chaining
+
+// const getPosts = (dataAddress) => {
+//    return new Promise((resolve, reject) => {
+//     const requests = new XMLHttpRequest;
+    
+//     requests.addEventListener('readystatechange', () => {
+//      if (requests.readyState === 4 && requests.status === 200){ //if successfull (error becomes false)
+//          const data = JSON.parse(requests.responseText);
+//          resolve(data);
+//      } else if(requests.readyState === 4){
+//          reject('cant find data you are requesting')  ///if failed (error becomes true)
+//      } 
+//    })
+//     requests.open('GET', dataAddress);
+//     requests.send();
+    
+//     } ) 
+// }
+
+
+// getPosts('https://jsonplaceholder.typicode.com/posts/').then(data => {
+//     console.log(data);
+//   return getPosts('https://jsonplaceholder.typicode.com/posts/');
+// }).then(data => {
+//     console.log(data);
+// }).catch(err => {
+//     console.log(err);
+// });
+
+
+//fetch method
+
+// fetch('https://jsonplaceholder.typicode.com/posts/').then(postDatas => {
+//     console.log(postDatas);
+//     return postDatas.json();
+// }).then(posts => {
+//     console.log(posts);
+// }).catch(err => {
+//     console.log('cant find data', err);
+// });
+
+
+// fetch(addressAsAnArugument).then(reolvedfunct).catch(error)
+// nameofFuct().resolvefunct().rejectfunct();  ......how to call a promise function
+
+
+//await and async
+//async returns a promise
+//await is just saying 'do not assign a value to yourself until i get the data completely'
+// const getPosts = async () => {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
+
+//     if(response.status !== 200){
+//         throw new Error('cannot fetch the data');
+//     }
+
+//     const data = await response.json();
+//     return data;
+// };
+
+// getPosts()
+// .then(data => console.log('resolved:', data))
+// .catch(err => console.log('rejected:', err.message));
+
+//////GOOD BYE TO VANILLA JS FOR NOW.
+
 
 
 
